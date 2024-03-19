@@ -2,7 +2,7 @@ export const materi = [
     {
         id: 1,
         title: "Pengertian Shalat",
-        image: "",
+        image: "",  
         materi1: "Batasi Konsumsi Pangan Asin, Manis, dan Berlemak",
         materi2: "......."
     },

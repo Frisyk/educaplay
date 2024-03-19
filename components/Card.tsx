@@ -1,8 +1,8 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 interface CardProps {
   nama: string;
-  gambar: string;
+  gambar: StaticImageData;
 }
 
 const Card = ({ nama, gambar }: CardProps) => {
