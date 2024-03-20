@@ -3,10 +3,6 @@ import Link from "next/link";
 
 export default function LoginPage() {
 
-  function login() {
-    console.log("google");
-  }
-
     return (
       <main className="flex items-center justify-center md:h-screen">
         <div className="relative mx-auto flex w-full max-w-[400px] flex-col space-y-2.5 p-4 md:-mt-32">
@@ -16,10 +12,9 @@ export default function LoginPage() {
             </div>
           </div>
           <Link href={"/dashboard"}>
-          <h1>Login Form</h1>
+            <button>Login with google</button>
           </Link>
           {/* <LoginForm /> */}
-          <button onClick={login}>Login with google</button>
         </div>
       </main>
     );
