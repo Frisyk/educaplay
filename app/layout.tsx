@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import BottomNavigation from "@/components/BottomNav";
-import Header from "@/components/Header";
 import { SessionProvider } from "@/components/Provider";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -24,7 +22,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <SessionProvider>
-          <Header />
           {children}
         </SessionProvider>      
       </body>
