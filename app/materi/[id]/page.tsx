@@ -23,3 +23,5 @@ function MateriPage({ params }: { params: MateriParams }) {
     </main>
   );
 }
+
+export default MateriPage
