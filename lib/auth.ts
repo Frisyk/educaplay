@@ -56,7 +56,6 @@ export const authOptions = {
 //         return token;
 //       }
 // },
-session: { strategy: "jwt" },
   adapter: PrismaAdapter(prisma) as Adapter,
   providers: [
     GoogleProvider({
