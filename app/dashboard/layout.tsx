@@ -1,8 +1,8 @@
 'use client'
 import BottomNavigation from '@/components/BottomNav';
-// import { NextAuthProvider } from '@/components/Provider';
+import TopNavigation from '@/components/TopNav';
 import { useSession, getSession, SessionProvider } from "next-auth/react"
-  
+import { redirect } from 'next/navigation';  
 
  
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -13,11 +13,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   }
 
   if (status === "unauthenticated") {
-    return <p>Access Denied</p>
+    const rec = redirect('/')
+    alert("Access Denied, Please Login First")
+    return rec
   }
   return (
     <SessionProvider>
       <div className="flex h-screen flex-col md:flex-row md:overflow-hidden">
+        <TopNavigation/>
         <div className="flex-grow p-6 md:overflow-y-auto md:p-12">{children}</div>
         <BottomNavigation />
       </div>
