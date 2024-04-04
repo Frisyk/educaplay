@@ -1,3 +1,6 @@
+import perbedaan from "../public/perbedaan.png"
+
+
 export const materi = [
     {
         id: 1,
@@ -46,7 +49,7 @@ Artinya: “Padahal mereka hanya diperintahkan menyembah Allah, dengan ikhlas me
 14.	Tidak mengunyah, makan dan minum`,
     },
     {
-        id: 3,
+        id: 4,
         title: `Perkara-perkara yang membatalkan Shalat`,
         image: ``,
         materi1: `Beberapa perkara yang dapat membatalkan shalat:
@@ -73,5 +76,58 @@ Artinya: “Padahal mereka hanya diperintahkan menyembah Allah, dengan ikhlas me
 •	Mengucap salam sebelum waktunya
 •	Mengucap takbiratul ihram kedua kainya dengan niat memperbarui shalat
 •	Dengan sengaja Kembali duduk tasyahud awal pada saat sudah dalam kondisi berdiri.`
+    },
+    {
+        id: 5,
+        title: "Ketentuan dalam pelaksanaan shalat fardlu",
+        image: "",
+        materi1: `Ada empat : 
+•	Rukun, dalam shalat tidak boleh ditinggalkan baik karena sengaja, lujpa, maupun memang tidak mengetahuinya.
+•	Sunnah Ab’adl, perkara-perkara yang dianjurkan dalam shalat
+•	Sunnah Ha’iah, perkara-perkara sunnah dalam shalat yang jika dilupa dikerjakan tidak perlu menggantinya dengan sujud sahwi
+•	Perkara-perkara yang membatalkan shalat.`
+    },
+    {
+        id: 6,
+        title: "Rukun Shalat Fardlu",
+        image: "",
+        materi1: `
+1)	Niat
+2)	Berdiri (jika mampu)
+3)	Takbiratul Ihram
+4)	Membaca surah al-fatihah
+5)	Rukuk dengan thuma’ninah
+6)	Iktidal dengan thuma’ninah
+7)	Sujud dengan tuma’ninah
+8)	Duduk diantara dua sujud dengan thuma’ninah
+9)	Duduk tasyahud awal dan akhir dengan thuma’ninah
+10)	Membaca tasyahud
+11)	Membaca shalawat Nabi
+12)	Membaca salam yang pertama sambil menoleh ke kanan
+13)	Tertib urutan rukunnya`
+    },
+    {
+        id: 7,
+        title: "Perbedaan Pelaksanaan rukun antara perempuan dan laki-laki",
+        image: perbedaan,
+        materi1: ""
+    },
+    {
+        id: 8,
+        title: "Sunnah Shalat Lima Waktu",
+        image: "",
+        materi1: `Dibedakan menjadi dua macam :
+•	Sunnah Ab’adl dalam Shalat Fardlu, yaitu sunnah yang apabila tidak dikerjakan harus mengganti dengan sujud syahwi.
+•	Sunnah Hai’ah dalam Shalat Fardlu, yaitu amalan sunnah dalam Shalat Fardhu yang jika tertinggal karena lupa atau sengaja ditinggalkan, maka Sholatnya tetap sah dan tidak perlu sujud sahwi.`
+    },
+    {
+        id: 9,
+        title: "Hikmah Pelaksanaan Shalat Lima Waktu",
+        image: "",
+        materi1: `a.	Shalat menjadikah hidup sehat
+b.	Membentuk kedisplinan individu
+c.	Senantiasa teringat akan dosa-dosa yang telah dilakukan
+d.	Mencegah perbuatan keji dan munkar
+e.	Penyebab diampuni dosa-dosa.`
     }
 ]
