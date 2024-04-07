@@ -39,7 +39,7 @@ export default function Modal({ link, onClose }: ModalProps) {
 
 function ListMateri({title, link}: ListProps) {
     return(
-        <Link href={`/materi/${link}`} className="">
+        <Link href={`/dashboard/materi/${link}`} className="">
             <h1 className="p-3 mb-1 bg-blue-500 text-white">{title}</h1>
         </Link>
     )

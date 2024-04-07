@@ -19,7 +19,7 @@ function MateriPage({ params }: { params: MateriParams }) {
 
   return (
     <main className="min-h-screen py-20 flex bg-blue-50 md:w-[60%] mx-auto flex-col items-center">
-      <TopNavigation id={`/materi/${params.id}`} />
+      <TopNavigation id={`/dashboard/materi/${params.id}`} />
       <div className="w-[90%] mx-auto  flex flex-col text-blue-800 items-center">
         <h1 className="text-3xl font-bold my-5 text-center rounded-2xl text-blue-900 bg-blue-100 p-3">{title}</h1>
         <div className="text-base leading-8 mt-3 text-justify whitespace-pre-line">
