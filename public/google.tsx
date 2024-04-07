@@ -9,7 +9,6 @@ function Icon() {
       version="1.1"
       viewBox="0 0 512 512"
       xmlSpace="preserve"
-      className="mr-5"
     >
       <path
         fill="#167EE6"

@@ -25,13 +25,16 @@ export default function Home() {
         width={800}
         height={1200}
       />
-      <p className="text-3xl p-12 font-bold leading-10">
+      <div className="rounded-3xl bg-white flex items-center flex-col mt-[-50px] z-20">
+      <p className="text-3xl p-12 font-bold leading-[45px]">
       Belajar Agama <br /> dengan Asyik dan Menyenangkan <br /> Yuk
       </p>
-      <Link className="p-5 bg-blue-800 text-white w-4/5 text-center text-xl rounded-xl flex gap-5 items-center " href={"/api/auth/signin"}>
+      <Link className="p-5 bg-blue-800 text-white w-4/5 text-center text-xl rounded-xl flex gap-5 items-center justify-center " href={"/api/auth/signin"}>
         <Icon/>
         Login with Google
       </Link>
+      </div>
+      
       <h1 className="absolute text-white p-4 m-5 rounded-2xl text-3xl right-0 font-semibold tracking-wide">EducaPlay</h1>
     </main>
   );
