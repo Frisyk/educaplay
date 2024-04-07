@@ -5,6 +5,7 @@ import { redirect } from 'next/navigation';
 import Image from "next/image";
 import Link from "next/link";
 import hero from "../public/hero.png"
+import Icon from "@/public/google";
 
 export default function Home() {
   const { data: session, status } = useSession()
@@ -27,10 +28,11 @@ export default function Home() {
       <p className="text-3xl p-12 font-bold leading-10">
       Belajar Agama <br /> dengan Asyik dan Menyenangkan <br /> Yuk
       </p>
-      <Link className="p-5 bg-blue-800 text-white w-4/5 text-center text-xl rounded-xl " href={"/api/auth/signin"}>
+      <Link className="p-5 bg-blue-800 text-white w-4/5 text-center text-xl rounded-xl flex gap-5 items-center " href={"/api/auth/signin"}>
+        <Icon/>
         Login with Google
       </Link>
-      <h1 className="absolute text-white p-4 m-5 rounded-2xl text-4xl  font-bold tracking-wide">EducaPlay</h1>
+      <h1 className="absolute text-white p-4 m-5 rounded-2xl text-3xl right-0 font-semibold tracking-wide">EducaPlay</h1>
     </main>
   );
 }

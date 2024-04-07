@@ -21,7 +21,7 @@ const BottomNavigation = () => {
 
 
   return (
-    <nav className="bottom-navigation flex w-full justify-evenly fixed bottom-0">
+    <nav className="bottom-navigation flex w-full p-2 justify-evenly items-center fixed bottom-0">
       {navigationItems.map((item) => {
         const LinkIcon = item.icon
         return (

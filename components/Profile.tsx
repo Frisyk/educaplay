@@ -10,24 +10,20 @@ export default async function Profile() {
   const profileImage = typeof user?.image === 'string' ? user?.image : profile;
 
   return (
-    <main className="flex items-center justify-center md:h-screen">
-      <div className="relative mx-auto flex w-full max-w-[400px] flex-col space-y-2.5 p-4 md:-mt-32">
-        <div className="flex h-20 w-full items-end rounded-lg bg-blue-500 p-3 md:h-36">
-          <div className="w-32 text-white md:w-36">
-            <h1>EducaPlay</h1>
-          </div>
-        </div>
+    <main className="flex flex-col items-center justify-center md:h-screen">
+        
         <ButtonLogout />
-        <h1>{user?.name}</h1>
         {typeof user?.image === 'string' && (
           <Image
             src={profileImage}
             alt={user.name || 'Profile Image'}
             width={400}
             height={400}
+            className="w-40 rounded-full mt-28 border-4 border-blue-400"
           />
         )}
-      </div>
+       <h1 className="font-bold text-3xl mt-5 mb-2 text-blue-900">{user?.name}</h1>
+       <p className="text-blue-800">{user?.email}</p>
     </main>
   );
 }

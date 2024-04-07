@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: {
     template: '%s | EducaPlay',
-    default: 'EducaPlay Dashboard',
+    default: 'EducaPlay',
   },
   description: 'Web App belajar PAI interaktif.',
   metadataBase: new URL('https://next-learn-dashboard.vercel.sh'),
