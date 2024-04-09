@@ -18,7 +18,7 @@ function MateriPage({ params }: { params: MateriParams }) {
   const { title, materi1, materi2, materi3, image } = materi[params.id];
 
   return (
-    <main className="min-h-screen py-20 flex bg-blue-50 md:w-[60%] mx-auto flex-col items-center">
+    <main className="min-h-screen py-20 flex  md:w-[60%] mx-auto flex-col items-center">
       <TopNavigation id={`/dashboard/materi/${params.id}`} />
       <div className="w-[90%] mx-auto  flex flex-col text-blue-800 items-center">
         <h1 className="text-3xl font-bold my-5 text-center rounded-2xl text-blue-900 bg-blue-100 p-3">{title}</h1>

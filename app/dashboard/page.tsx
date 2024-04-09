@@ -1,6 +1,5 @@
 import { getCurrentUser } from '@/lib/session';
 import Card from "@/components/Card";
-import Image from "next/image";
 import shalat from "@/public/pray.png";
 import { materi } from "@/components/data";
 import TopNavigation from '@/components/TopNav';
@@ -19,10 +18,10 @@ export default async function Home() {
   return (
     <main className='pb-20'>
       <TopNavigation/>
-      <h1 className="text-xl">Hai {user?.name}</h1>
+      <h1 className="text-2xl font-extrabold text-blue-900 mt-20">BAB I : Belajar Sholat</h1>
       <div>
         {materi?.map((mtr, index) => (
-          <Card key={mtr.id} id={index} nama={mtr.title} gambar={shalat} bab="1 shalat" />
+          <Card key={mtr.id} id={index} nama={mtr.title} gambar={shalat} bab={mtr.id} />
         ))}
       </div>
     </main>

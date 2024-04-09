@@ -21,7 +21,7 @@ const BottomNavigation = () => {
 
 
   return (
-    <nav className="bottom-navigation flex w-full p-2 justify-evenly items-center fixed bottom-0">
+    <nav className="bottom-navigation flex w-full p-3 rounded-lg mb-2 justify-evenly bg-white items-center fixed bottom-0">
       {navigationItems.map((item) => {
         const LinkIcon = item.icon
         return (
@@ -29,7 +29,7 @@ const BottomNavigation = () => {
                 key={item.href} 
                 href={item.href} 
                 className={clsx(
-                    'flex h-[48px] grow items-center justify-center gap-2 bg-gray-50 p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3',
+                    'flex grow items-center rounded-md justify-center gap-2 bg-gray-50 p-5 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-4 md:px-5',
                     {
                       'bg-sky-100 text-blue-600': pathname === item.href,
                     },
