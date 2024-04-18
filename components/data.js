@@ -6,7 +6,8 @@ export const materi = [
         id: 1,
         title: `Pengertian Shalat Fardlu`,
         image: ``,
-        materi1: `Secara bahasa, shalat fardlu memiliki arti berdo’a atau do’a meminta kebaikan. Adapun secara istilah, shalat fardlu berarti semua perkataan dan perbuatan tertentu yang dimulai dari takbir dan diakhiri dengan salam.`,
+        materi1: `Secara bahasa, shalat fardlu memiliki arti berdo’a atau do’a meminta kebaikan. Adapun secara istilah, shalat fardlu berarti semua perkataan dan perbuatan tertentu yang dimulai dari takbir dan diakhiri dengan salam.
+        `,
         materi2: `Shalat yang diwajibkan sebanyak lima waktu sehari-semalam, yang biasa kita kenal dengan nama shalat Subuh, Dluhur, Ashar, Maghrib, dan shalat Isya’. Shalat fardlu wajib hukumhya bagi setiap orang muslim, baik laki-laki  dan Perempuan yang berakal dan telah memasuki masa baligh.`
     },
     {

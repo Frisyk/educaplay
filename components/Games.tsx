@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Games() {
     return (
-      <main className="flex flex-col gap-10 text-center mt-5 w-full md:h-screen">
+      <main className="flex flex-col gap-10 pb-10 text-center mt-5 w-full md:h-screen">
         <Link href={"/dashboard/games/assesmen"}>
             <div  className="bg-blue-500 p-4 py-10 border-blue-100 border-4 w-full rounded-lg md:p-10">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-full text-blue-300 h-40">
