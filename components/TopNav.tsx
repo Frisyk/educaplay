@@ -1,6 +1,6 @@
 'use client'
 import Link from "next/link";
-import { useSession, getSession, SessionProvider } from "next-auth/react"
+import { useSession } from "next-auth/react"
 
 
 export default function TopNavigation () {

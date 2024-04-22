@@ -1,4 +1,10 @@
 import perbedaan from "../public/perbedaan.png"
+import takbir from "../public/games/takbir.png"
+import sujud from "../public/games/sujud.png"
+import ruku from "../public/games/ruku.png"
+import sujud2 from "../public/games/sujud2.png"
+import takbir2 from "../public/games/takbir2.png"
+import ruku2 from "../public/games/ruku2.png"
 
 
 export const materi = [
@@ -131,4 +137,38 @@ c.	Senantiasa teringat akan dosa-dosa yang telah dilakukan
 d.	Mencegah perbuatan keji dan munkar
 e.	Penyebab diampuni dosa-dosa.`
     }
+]
+
+
+export const GameResources = [
+    {
+        cardId: 1,
+        name: "sujud",
+        src: sujud,
+    },
+    {
+        cardId: 2,
+        name: "ruku",
+        src: ruku,
+    },
+    {
+        cardId: 3,
+        name: "takbir",
+        src: takbir,
+    },
+    {
+        cardId: 4,
+        name: "takbir",
+        src: takbir2,
+    },
+    {
+        cardId: 5,
+        name: "sujud",
+        src: sujud2,
+    },
+    {
+        cardId: 6,
+        name: "ruku",
+        src: ruku2,
+    },
 ]
