@@ -143,31 +143,37 @@ e.	Penyebab diampuni dosa-dosa.`
 export const GameResources = [
     {
         cardId: 1,
+        matched: false,
         name: "sujud",
         src: sujud,
     },
     {
         cardId: 2,
+        matched: false,
         name: "ruku",
         src: ruku,
     },
     {
         cardId: 3,
+        matched: false,
         name: "takbir",
         src: takbir,
     },
     {
         cardId: 4,
+        matched: false,
         name: "takbir",
         src: takbir2,
     },
     {
         cardId: 5,
+        matched: false,
         name: "sujud",
         src: sujud2,
     },
     {
         cardId: 6,
+        matched: false,
         name: "ruku",
         src: ruku2,
     },
