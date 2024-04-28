@@ -1,10 +1,8 @@
 'use client'
 import BottomNavigation from '@/components/BottomNav';
-import TopNavigation from '@/components/TopNav';
-import { useSession, getSession, SessionProvider } from "next-auth/react"
-import { redirect, usePathname, useSearchParams } from 'next/navigation';  
+import { useSession, SessionProvider } from "next-auth/react"
+import { redirect, usePathname } from 'next/navigation';  
 import Loading from './loading';
-import {useRouter} from 'next/router'; 
 
 
  
@@ -17,17 +15,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     return <Loading/>
   }
 
-  if (status === "unauthenticated") {
-    const rec = redirect('/')
-    alert("Access Denied, Please Login First")
-    return rec
-  }
+  // if (status === "unauthenticated") {
+  //   const rec = redirect('/dashboard/games')
+  //   alert("Access Denied, Please Login First")
+  //   return rec
+  // }
 
   const showBottomNavigationPages = [
     '/dashboard',
-    '/dashboard/games',
+    '/dashboard/quest',
     '/dashboard/profile',
-    // Add more page paths as needed
   ];
 
   const shouldShowBottomNavigation = showBottomNavigationPages.includes(pathname);

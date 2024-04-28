@@ -1,5 +1,5 @@
 'use client'
-import { useSession, getSession, SessionProvider } from "next-auth/react"
+import { useSession, signIn } from "next-auth/react"
 import { redirect } from 'next/navigation';  
 
 import Image from "next/image";
@@ -9,6 +9,7 @@ import Icon from "@/public/google";
 
 export default function Home() {
   const { data: session, status } = useSession()
+console.log(session);
 
   if(status === "authenticated"){
     return redirect('/dashboard')
@@ -29,10 +30,13 @@ export default function Home() {
       <p className="text-3xl p-12 font-bold leading-[45px]">
       Belajar Agama <br /> dengan Asyik dan Menyenangkan <br /> Yuk
       </p>
-      <Link className="p-5 bg-blue-800 text-white w-4/5 text-center text-xl rounded-xl flex gap-5 items-center justify-center " href={"/api/auth/signin"}>
-        <Icon/>
-        Login with Google
-      </Link>
+        <Link className="p-5 py-7 mb-10 bg-blue-800 text-white w-4/5 text-center text-xl font-bold rounded-xl flex gap-5 items-center justify-center " href={"/dashboard"}>
+          Menuju Halaman Utama
+        </Link>
+        <button onClick={() => signIn('google')} className="p-5 bg-blue-50 text-blue-800 outline w-4/5 text-center text-xl rounded-xl flex gap-5 items-center justify-center " >
+          <Icon/>
+          Login with Google
+        </button>
       </div>
       
       <h1 className="absolute text-white p-4 m-5 rounded-2xl text-3xl right-0 font-semibold tracking-wide">EducaPlay</h1>

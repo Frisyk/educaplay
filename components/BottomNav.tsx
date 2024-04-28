@@ -12,7 +12,7 @@ import {
 
   const navigationItems = [
     { href: "/dashboard", label: "Home", icon: HomeIcon },
-    { href: "/dashboard/games", label: "Games", icon: AcademicCapIcon },
+    { href: "/dashboard/quest", label: "Quest", icon: AcademicCapIcon },
     { href: "/dashboard/profile", label: "Profil", icon:  UserCircleIcon },
   ];
 
