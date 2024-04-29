@@ -18,9 +18,9 @@ export default function CardSortPage() {
   }
 
     return (
-      <SessionProvider>
+      <div>
         <GamesCard />
-      </SessionProvider>
+      </div>
     )
   }
   
