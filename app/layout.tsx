@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { SessionProvider } from "@/components/Provider";
+import icon from "../public/unknown.png"
 
 const inter = Poppins({ subsets: ["latin"], weight: ["200", "400", "600"] });
 
@@ -11,7 +12,11 @@ export const metadata: Metadata = {
     default: 'EducaPlay',
   },
   description: 'Web App belajar PAI interaktif.',
-  metadataBase: new URL('https://next-learn-dashboard.vercel.sh'),
+  metadataBase: new URL('https://educaplay.vercel.app'),
+  icons: {
+    icon: '/icon.png',
+  },
+
 };
 export default function RootLayout({
   children,
