@@ -1,6 +1,6 @@
 'use client'
 import BottomNavigation from '@/components/BottomNav';
-import { useSession, SessionProvider } from "next-auth/react"
+import { useSession } from "next-auth/react"
 import { redirect, usePathname } from 'next/navigation';  
 import Loading from './loading';
 
@@ -30,11 +30,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const shouldShowBottomNavigation = showBottomNavigationPages.includes(pathname);
 
   return (
-    <SessionProvider>
       <div className="flex h-screen flex-col md:flex-row md:overflow-hidden">
         <div className="flex-grow p-6 md:overflow-y-auto md:p-12">{children}</div>
         {shouldShowBottomNavigation && <BottomNavigation /> }
       </div>
-    </SessionProvider>
   );
 }

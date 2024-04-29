@@ -5,6 +5,7 @@ import { GameResources } from "../data";
 import { useEffect, useState } from "react";
 import cover from "../../public/games/cover.png"
 import Link from "next/link";
+import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 
 interface Card {
   cardId: number;
@@ -105,6 +106,7 @@ function GamesCard() {
 
   return (
     <div className="text-center text-blue-800">
+      <Link href="/dashboard/quest"><ArrowLeftIcon className="w-10 fixed top-0 left-0 m-5" /></Link>
       <h1 className="text-4xl font-bold">Card Match</h1>
       {!gameStarted ? (
           <button className="py-2 px-5 my-5 outline rounded-full font-bold text-2xl" onClick={startGame}>
@@ -121,13 +123,13 @@ function GamesCard() {
             }
           </button>
         )}
-      <div className="flex flex-wrap gap-10 items-center justify-center py-10">
+      <div className="flex flex-wrap gap-8 items-center justify-center py-10">
         {cards.map((card) => 
          (
-          <div className={card === choiceOne || card === choiceTwo || card.matched? "card flipped" : "card"} key={card.cardId} onClick={() => handleClick(card)}>
+          <div className={card === choiceOne || card === choiceTwo || card.matched? "card flipped w-40" : "card w-40"} key={card.cardId} onClick={() => handleClick(card)}>
             <div>
-              <Image className="max-w-40 front" src={card.src} alt="card front" />
-              <Image className="max-w-40 back" src={cover} alt="card back" />
+              <Image className="max-w-48 front" src={card.src} alt="card front" />
+              <Image className="max-w-48 back" src={cover} alt="card back" />
             </div>
           </div>
         ))}
