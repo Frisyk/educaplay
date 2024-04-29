@@ -6,7 +6,7 @@ import card from "../public/cardmatch.png"
 export default function Games() {
     return (
       <main className="flex flex-col gap-10 pb-20  text-center  mt-5 w-full md:h-screen">
-        <Link href={"/dashboard/quest/assesmen"}>
+        <Link href={"/dashboard/quest/assesmen"} prefetch={false}>
             <div  className="bg-blue-50 p-4 flex items-center outline text-blue-800 w-full rounded-lg md:p-10">
               <Image
                 src={task}
@@ -17,7 +17,7 @@ export default function Games() {
                 <h2 className="text-3xl font-bold my-4">Assesmen <br />(Ujian)</h2>
             </div>
         </Link>
-        <Link href={"/dashboard/quest/cardmatch"}>
+        <Link href={"/dashboard/quest/cardmatch"} prefetch={false}>
             <div  className="bg-blue-50 p-4 flex items-center outline text-blue-800 w-full rounded-lg md:p-10">
                 <Image
                     src={card}

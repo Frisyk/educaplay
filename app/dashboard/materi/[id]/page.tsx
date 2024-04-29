@@ -3,11 +3,13 @@ import { materi } from "@/components/data";
 import Image from "next/image";
 import type { Metadata } from "next";
 
-
-export const metadata: Metadata = {
-  title: "Materi",
-  description: 'Materi belajar PAI tentang shalat.',
-};
+export const generateMetadata = async ({params}: {params: MateriParams}) => {
+  const {title, materi1} = materi[params.id]
+  return {
+    title: title,
+    description: materi1
+  }
+}
 
 
 type MateriParams = {

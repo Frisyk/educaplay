@@ -1,5 +1,8 @@
 import Profile from "@/components/Profile";
+import { getUserByEmail } from "@/lib/data";
+import prisma from "@/lib/prisma";
 import type { Metadata } from "next";
+
 
 
 export const metadata: Metadata = {
@@ -9,8 +12,12 @@ export const metadata: Metadata = {
 
 
 export default function ProfilePage() {
-    return (
-      <Profile/>
+  
+  return (
+      <>
+        <Profile/>
+      
+      </>
       
     );
   }
