@@ -16,7 +16,7 @@ console.log(session);
   }
   
   return (
-    <main className="w-full h-screen pb-10 text-blue-950 bg-white flex items-center flex-col ">
+    <main className="w-full min-h-screen pb-20 text-blue-950 bg-white flex items-center flex-col ">
       {/* <h1 className="font-semibold text-2xl text-wrap uppercase">
         Educaplay
       </h1> */}
