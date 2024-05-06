@@ -3,7 +3,6 @@ import GoogleProvider from "next-auth/providers/google"
 import prisma from "./prisma"
 import { Adapter } from "next-auth/adapters"
 import  {UserRole}  from "@prisma/client";
-import { getUserById, getAccountByUserId } from "./data";
 
 
 export const authOptions = {
