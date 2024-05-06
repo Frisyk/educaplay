@@ -30,7 +30,6 @@ export default function Modal({ link, onClose }: ModalProps) {
         <div className="text-center">
           {materi.map((mtr, index) => {
             const isVisited = visitedLinks.includes(index);
-            console.log(isVisited);
             
             return (
               <ListMateri

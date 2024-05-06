@@ -1,4 +1,4 @@
-import { getCurrentUser } from '@/lib/session';
+import { getCurrentUser, getUserbyEmail } from '@/lib/action';
 import Link from 'next/link';
 import ButtonLogout from './ButtonLogout';
 import Image from 'next/image';
@@ -8,6 +8,7 @@ import ButtonLogin from './ButtonLogin';
 
 export default async function Profile() {
   const user = await getCurrentUser();
+  const userData = user && await getUserbyEmail(user?.email || "unknown")
   const profileImage = typeof user?.image === 'string' ? user?.image : profile;
 
   return (
@@ -15,7 +16,7 @@ export default async function Profile() {
         {user? <ButtonLogout/> : <ButtonLogin/> }
         <Image
             src={profileImage || profile}
-            alt={user?.name || 'Profile Image'}
+            alt={userData?.email || 'Profile Image'}
             width={400}
             height={400}
             className="w-40 rounded-full mt-28 border-4 border-blue-400"

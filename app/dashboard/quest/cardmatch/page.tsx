@@ -11,9 +11,7 @@ export default function CardSortPage() {
   }
 
   if (status === "unauthenticated") {
-    const rec = redirect('/redirect')
-    console.log(rec);
-    
+    const rec = redirect('/redirect')    
     return rec
   }
 

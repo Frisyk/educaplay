@@ -1,4 +1,4 @@
-import { getCurrentUser } from '@/lib/session';
+import { getCurrentUser } from '@/lib/action';
 import Card from "@/components/Card";
 import shalat from "@/public/pray.png";
 import { materi } from "@/components/data";
@@ -9,7 +9,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Dashboard",
-  description: 'Dashboard wab app belajar PAI interaktif tentang shalat.',
+  description: 'Dashboard web app belajar PAI interaktif tentang shalat.',
 };
 
 

@@ -1,25 +1,10 @@
-'use client'
+"use client"
+
 import BottomNavigation from '@/components/BottomNav';
-import { useSession } from "next-auth/react"
-import { redirect, usePathname } from 'next/navigation';  
-import Loading from './loading';
-
-
+import { usePathname } from 'next/navigation';  
  
 export default function Layout({ children }: { children: React.ReactNode }) {
-  const { data: session, status } = useSession()
   const pathname = usePathname()
-  
-
-  if (status === "loading") {
-    return <Loading/>
-  }
-
-  // if (status === "unauthenticated") {
-  //   const rec = redirect('/dashboard/games')
-  //   alert("Access Denied, Please Login First")
-  //   return rec
-  // }
 
   const showBottomNavigationPages = [
     '/dashboard',

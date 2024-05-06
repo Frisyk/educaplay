@@ -9,11 +9,11 @@ import Icon from "@/public/google";
 
 export default function Home() {
   const { data: session, status } = useSession()
-console.log(session);
 
   if(status === "authenticated"){
     return redirect('/dashboard')
   }
+
   
   return (
     <main className="w-full min-h-screen pb-20 text-blue-950 bg-white flex items-center flex-col ">

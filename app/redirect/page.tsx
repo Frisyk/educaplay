@@ -1,6 +1,13 @@
 import { ArrowLeftCircleIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import React from 'react'
+import type { Metadata } from "next";
+
+
+export const metadata: Metadata = {
+  title: "Redirect",
+  description: 'Anda dialihkan kehalaman ini.',
+};
 
 export default function LoginFirst() {
   return (
