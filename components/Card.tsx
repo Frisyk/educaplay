@@ -4,7 +4,7 @@ import Link from "next/link";
 interface CardProps {
   nama: string;
   gambar: StaticImageData;
-  bab: number
+  bab: string
   id: number
 }
 
@@ -15,7 +15,7 @@ const Card = ({ nama, gambar, bab, id }: CardProps) => {
       <h1 className="uppercase font-bold text-sm text-yellow-200 bg-blue-700 w-fit p-2 rounded-md mb-2">Part {bab}</h1>
       <div className="flex items-center justify-between md:flex-col md:items-center">
         <h2 className="text-xl font-semibold leading-8 text-white">{nama}</h2>
-        <Image src={gambar} alt={nama} width={100} />
+        <Image src={gambar} alt={nama!!} width={100} />
       </div>
     </div>
     </Link>

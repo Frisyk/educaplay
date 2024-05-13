@@ -29,16 +29,16 @@ async function MateriPage({ params }: { params: MateriParams }) {
         <h1 className="text-3xl font-bold my-5 text-center rounded-2xl text-blue-900 bg-blue-100 p-3">{post?.title}</h1>
         <div className="text-base leading-8 mt-3 text-justify whitespace-pre-line">
           <p>{post?.content}</p><br />
-          {post?.image != null && 
+           
             <Image
-              src={post.image || defaultImg}
+              src={post?.image || defaultImg}
               alt={post?.title || "details"}
               width={400}
               height={400}
-              className="w-screen"
+              className="w-20"
               loading="lazy"
             />
-          }
+          
         </div>
       </div>
     </main>
