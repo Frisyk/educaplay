@@ -1,6 +1,6 @@
 import ButtonDelete from '@/components/ButtonDelete';
 import prisma from '@/lib/prisma';
-import { getPosts, getUsers } from '@/lib/action';
+import { getPost, getUsers } from '@/lib/action';
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

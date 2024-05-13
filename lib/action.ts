@@ -20,9 +20,17 @@ export async function getUsers() {
   const users = await prisma.user.findMany()
   return users
 }
+export async function getAllPosts() {
+  const posts = await prisma.post.findMany()
+  return posts
+}
 
-export async function getPosts() {
-  const post = await prisma.post.findMany()
+export async function getPost(id: string) {
+  const post = await prisma.post.findUnique({
+    where: {
+      id: id
+    }
+  })
   return post
 }
 

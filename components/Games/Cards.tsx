@@ -1,7 +1,7 @@
 'use client'
 
 import Image, { StaticImageData } from "next/image";
-import { GameResources } from "../data";
+import { GameResources } from "../../lib/data";
 import { useEffect, useState } from "react";
 import cover from "../../public/games/cover.png"
 import Link from "next/link";

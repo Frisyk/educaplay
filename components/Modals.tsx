@@ -1,6 +1,6 @@
 'use client'
 import Link from "next/link";
-import { materi } from "./data";
+import { materi } from "../lib/data";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";

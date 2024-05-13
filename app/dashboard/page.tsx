@@ -1,7 +1,7 @@
 import { getCurrentUser } from '@/lib/action';
 import Card from "@/components/Card";
 import shalat from "@/public/pray.png";
-import { materi } from "@/components/data";
+import { materi } from "@/lib/data";
 import TopNavigation from '@/components/TopNav';
 
 import type { Metadata } from "next";
