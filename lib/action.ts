@@ -21,7 +21,9 @@ export async function getUsers() {
   return users
 }
 export async function getAllPosts() {
-  const posts = await prisma.post.findMany()
+  const posts = await prisma.post.findMany({
+    orderBy: {id: "asc"}
+  })
   return posts
 }
 

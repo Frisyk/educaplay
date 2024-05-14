@@ -14,13 +14,15 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   const materi = await getAllPosts()
+  console.log(materi);
+  
   return (
     <main className='pb-20'>
       <TopNavigation/>
       <h1 className="text-2xl font-extrabold text-blue-900 mt-20">BAB I : Belajar Sholat</h1>
       <div>
         {materi?.map((mtr, index) => (
-          <Card key={mtr.id} id={index} nama={mtr.title!!} gambar={shalat} bab={mtr.id} />
+          <Card key={mtr.id} id={index} nama={mtr.title!} gambar={shalat} bab={mtr.id} />
         ))}
       </div>
     </main>
