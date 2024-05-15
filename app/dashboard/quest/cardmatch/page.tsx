@@ -1,8 +1,9 @@
 'use client'
-import GamesCard from "@/components/Games/Cards";
+import GamesCard from "@/components/Games/GamesCard";
 import { useSession, SessionProvider } from "next-auth/react";
 import { redirect } from "next/navigation";
 import Loading from "../../loading";
+import LevelList from "@/components/Games/ListLevel";
 
 export default function CardSortPage() {
   const { data: session, status } = useSession()
@@ -15,10 +16,10 @@ export default function CardSortPage() {
     return rec
   }
 
+  const levels = ["Common", "Rare", "Epic"];
+
     return (
-      <div>
-        <GamesCard />
-      </div>
+      <LevelList levels={levels}/>
     )
   }
   

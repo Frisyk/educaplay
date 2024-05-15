@@ -1,20 +1,14 @@
 'use client'
 
-import Image, { StaticImageData } from "next/image";
 import { GameResources } from "../../lib/data";
 import { useEffect, useState } from "react";
-import cover from "../../public/games/cover.png"
-import Link from "next/link";
-import { ArrowLeftIcon } from "@heroicons/react/24/outline";
+import { Card } from "./type";
+import CardComponent from "./Card";
+import ModalComponent from "./Modal";
+import { Nav } from "./Nav";
 
-interface Card {
-  cardId: number;
-  name: string;
-  src: StaticImageData;
-  matched: boolean
-}
 
-function GamesCard() {
+function GamesCard({level}: {level: string}) {
   const [cards, setCards] = useState<Card[]>([]);
   const [turns, setTurns] = useState(0);
   const [choiceOne, setChoiceOne] = useState<Card | null>(null)
@@ -52,9 +46,11 @@ function GamesCard() {
 
   // handle choice
   const handleClick = (card: Card) => {
-    choiceOne? setChoiceTwo(card) : setChoiceOne(card)
+    if (card === choiceOne || card === choiceTwo) {
+      return; // Tidak lakukan apa-apa jika kartu yang sama diklik lagi
+    }
+    choiceOne !== null ? setChoiceTwo(card) : setChoiceOne(card);
   };
-
 
   // compare 2 selected choice
   useEffect(() => {
@@ -102,54 +98,29 @@ function GamesCard() {
     
   }, [cards]);
   
-
-
   return (
     <div className="text-center text-blue-800">
-      <Link href="/dashboard/quest"><ArrowLeftIcon className="w-10 fixed top-0 left-0 m-5" /></Link>
-      <h1 className="text-4xl font-bold">Card Match</h1>
+      <Nav/>
+      <p className="mt-1">level: {level}</p>
       {!gameStarted ? (
-          <button className="py-2 px-5 my-5 outline rounded-full font-bold text-2xl" onClick={startGame}>
-            Ayo Mulai
-          </button>
-        ) : (
-          <button className="py-2 px-5 my-5 outline rounded-full font-bold text-2xl" onClick={resetGame}>
-            {matched ? 
-              "Selesai"
-             : timer > 0 ? 
-              `Timer: ${Math.floor(timer / 60)}:${timer % 60 < 10 ? `0${timer % 60}` : timer % 60}`
-             : 
-              "Waktu Habis"
-            }
-          </button>
-        )}
+        <button className="py-2 px-5 my-5 outline rounded-full font-bold text-2xl" onClick={startGame}>
+          Ayo Mulai
+        </button>
+      ) : (
+        <button className="py-2 px-5 my-5 outline rounded-full font-bold text-2xl" onClick={resetGame}>
+          {matched ? "Selesai" : timer > 0 ? `Timer: ${Math.floor(timer / 60)}:${timer % 60 < 10 ? `0${timer % 60}` : timer % 60}` : "Waktu Habis"}
+        </button>
+      )}
       <div className="flex flex-wrap gap-8 items-center justify-center py-10">
-        {cards.map((card) => 
-         (
-          <div className={card === choiceOne || card === choiceTwo || card.matched? "card flipped w-32" : "card w-32"} key={card.cardId} onClick={() => handleClick(card)}>
-            <div>
-              <Image className="max-w-48 front" src={card.src} alt="card front" />
-              <Image className="max-w-48 back" src={cover} alt="card back" />
-            </div>
-          </div>
+        {cards.map((card) => (
+          <CardComponent key={card.cardId} card={card} handleClick={handleClick} choiceOne={choiceOne} choiceTwo={choiceTwo} matched={matched} />
         ))}
       </div>
-        <div className={!showModal ? "hidden" : "fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-50"}>
-          <div className="bg-white p-5 rounded-lg m-5">
-            <p className="text-2xl text-blue-800 font-bold">Selamat!! <br /> Anda menyelesaikan semuanya 🎉✨</p>
-            <div className="flex justify-between mt-4 m-5">
-              <button className="px-4 py-2 text-xl font-bold bg-blue-500 text-white rounded outline hover:bg-blue-600 mr-2" onClick={resetGame}>
-                Main lagi?
-              </button>
-              <Link className="px-4 py-2 text-xl font-bold bg-transparent text-blue-800 rounded outline" href={'/dashboard/quest'}>
-                Kembali
-              </Link>
-            </div>
-          </div>
-        </div>
-
+      {/* <LevelList levels={levels}/> */}
+      <ModalComponent showModal={showModal} resetGame={resetGame} />
     </div>
   );
+    
 }
 
 export default GamesCard;
