@@ -126,7 +126,7 @@ function GamesCard() {
       <div className="flex flex-wrap gap-8 items-center justify-center py-10">
         {cards.map((card) => 
          (
-          <div className={card === choiceOne || card === choiceTwo || card.matched? "card flipped w-40" : "card w-40"} key={card.cardId} onClick={() => handleClick(card)}>
+          <div className={card === choiceOne || card === choiceTwo || card.matched? "card flipped w-32" : "card w-32"} key={card.cardId} onClick={() => handleClick(card)}>
             <div>
               <Image className="max-w-48 front" src={card.src} alt="card front" />
               <Image className="max-w-48 back" src={cover} alt="card back" />

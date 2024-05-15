@@ -14,7 +14,7 @@ export default function Games() {
                 alt="assesmen picture"
                 className="w-1/2"
               />
-                <h2 className="text-3xl font-bold my-4">Assesment<br />(Ujian)</h2>
+                <h2 className="text-2xl font-bold my-4">Assesment<br />(Ujian)</h2>
             </div>
         </Link>
         <Link href={"/dashboard/quest/cardmatch"} prefetch={false}>
@@ -25,7 +25,7 @@ export default function Games() {
                     alt="assesmen picture"
                     className="w-1/2"
                   />
-                <h2 className="text-4xl my-4 font-bold ">Card Match</h2>
+                <h2 className="text-2xl my-4 font-bold ">Card Match</h2>
             </div>
         </Link>
       </main>

@@ -17,7 +17,7 @@ export default async function Home() {
   return (
     <main className='pb-20'>
       <TopNavigation/>
-      <h1 className="text-2xl font-extrabold text-blue-900 mt-20">BAB I : Belajar Sholat</h1>
+      <h1 className="text-2xl font-extrabold text-blue-900 mt-14 bg-blue-100 text-center p-2 rounded">BAB I : Belajar Sholat</h1>
       <div>
         {materi?.map((mtr, index) => (
           <Card key={mtr.id} id={index} nama={mtr.title!} gambar={shalat} bab={mtr.id} />
