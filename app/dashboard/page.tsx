@@ -13,9 +13,7 @@ export const metadata: Metadata = {
 
 
 export default async function Home() {
-  const materi = await getAllPosts()
-  console.log(materi);
-  
+  const materi = await getAllPosts()  
   return (
     <main className='pb-20'>
       <TopNavigation/>

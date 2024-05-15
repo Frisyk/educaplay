@@ -4,11 +4,11 @@ import React from 'react';
 export default function AssessmentPage() {
   const posts = [
     {
-      title: "Ujian Tengah Semester",
-      link: "https://google.com"
+      title: "Assesment 1",
+      link: "https://docs.google.com/forms/d/e/1FAIpQLScQKEx6fPXz_ijSSNIiz4zDen2qdGt1V8AQj3RpDYBvs4YNJQ/viewform?usp=sf_link"
     },
     {
-      title: "Ujian Semester",
+      title: "Assesment 2",
       link: "https://google.com"
     }
   ];
