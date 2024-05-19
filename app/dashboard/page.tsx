@@ -1,4 +1,4 @@
-import { getAllPosts, getCurrentUser } from '@/lib/action';
+import { getAllPosts } from '@/lib/action';
 import Card from "@/components/Card";
 import shalat from "@/public/pray.png";
 import TopNavigation from '@/components/TopNav';

@@ -1,18 +1,13 @@
 import Link from "next/link";
 import { Nav } from "./Nav";
+import { ListProps } from "./type";
 
-interface LevelListProps {
-  levels: string[]; // Array of level names (e.g., ["Common", "Rare", "Epic"])
-}
 
-const LevelList: React.FC<LevelListProps> = ({ levels }) => {
+const LevelList: React.FC<ListProps> = ({ levels}) => {
   return (
-    <div className="level-list font-bold flex flex-col text-2xl text-center text-blue-800">
-        <Nav/>
-        <h1 className="my-10">Pilih Tingkat Kesulitan mu🔥</h1>
-      
+    <div className="flex flex-col">      
         {levels.map((level, index) => (
-          <Link href={`/dashboard/quest/cardmatch/${level}`} className="px-5 py-2 outline mb-5 rounded-xl" key={index}>{level}</Link>
+          <Link href={`/dashboard/quest/cardmatch/${level}`} className="px-5 py-5 text-2xl outline mb-5 rounded-xl" key={index}>{level}</Link>
         ))}
       
     </div>

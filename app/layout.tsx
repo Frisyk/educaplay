@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className + ' bg-blue-50'}>
+      <body className={inter.className + ' bg-blue-50 text-blue-800'}>
         <SessionProvider>
           {children}
         </SessionProvider>      

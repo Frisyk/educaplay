@@ -1,4 +1,4 @@
-import Games from '@/components/Games'
+import Games from '@/components/Quest'
 import React from 'react'
 import type { Metadata } from "next";
 

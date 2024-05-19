@@ -100,7 +100,7 @@ function GamesCard({level}: {level: string}) {
   
   return (
     <div className="text-center text-blue-800">
-      <Nav/>
+      <Nav title="Card Match"/>
       <p className="mt-1">level: {level}</p>
       {!gameStarted ? (
         <button className="py-2 px-5 my-5 outline rounded-full font-bold text-2xl" onClick={startGame}>

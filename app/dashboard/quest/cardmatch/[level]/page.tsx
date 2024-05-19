@@ -4,7 +4,7 @@ import { materi } from "@/lib/data";
 import Image, { StaticImageData } from "next/image";
 import defaultImg from "@/public/default.png"
 import perbedaan from "@/public/perbedaan.png"
-import GamesCard from "@/components/Games/GamesCard";
+import GamesCard from "@/components/Games/CardMatch";
 
 // export const generateMetadata = async ({params}: {params: MateriParams}) => {
 //   const {title, materi1} = materi[params.id]
