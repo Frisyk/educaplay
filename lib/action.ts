@@ -26,6 +26,12 @@ export async function getAllPosts() {
   })
   return posts
 }
+export async function getGames() {
+  const games = await prisma.game.findMany({
+    orderBy: {id: "asc"}
+  })
+  return games
+}
 
 export async function getPost(id: string) {
   const post = await prisma.post.findUnique({
@@ -43,3 +49,13 @@ export const handleDelete = async (id: string) => {
     }
   })
 }
+
+export const newPost = async(title: string, image: Buffer) => {
+  await prisma.game.create({
+    data: {
+      title,
+      image,
+    },
+  });
+} 
+

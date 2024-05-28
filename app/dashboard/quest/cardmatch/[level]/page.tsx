@@ -1,9 +1,3 @@
-import TopNavigation from "@/components/TopNavMateri";
-import { getPost } from "@/lib/action";
-import { materi } from "@/lib/data";
-import Image, { StaticImageData } from "next/image";
-import defaultImg from "@/public/default.png"
-import perbedaan from "@/public/perbedaan.png"
 import GamesCard from "@/components/Games/CardMatch";
 
 // export const generateMetadata = async ({params}: {params: MateriParams}) => {
@@ -15,7 +9,7 @@ import GamesCard from "@/components/Games/CardMatch";
 // }
 
 type MateriParams = {
-  level: string;
+  level: number;
 };
 
 async function MateriPage({ params }: { params: MateriParams }) {

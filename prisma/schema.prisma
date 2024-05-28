@@ -72,3 +72,11 @@ model Post {
   image         String?
   content       String?
 }
+
+model Game {
+  id        Int      @id @default(autoincrement())
+  title     String
+  image     Bytes?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

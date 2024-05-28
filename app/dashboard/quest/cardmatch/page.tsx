@@ -17,7 +17,7 @@ export default function CardSortPage() {
     return rec
   }
 
-  const levels = ["Common", "Rare", "Epic"];
+  const levels = [1, 2, 3];
 
     return (
       <main className="level-list font-bold text-2xl text-center text-blue-800">

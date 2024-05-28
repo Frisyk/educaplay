@@ -7,15 +7,14 @@ import CardComponent from "./Card";
 import ModalComponent from "./Modal";
 import { Nav } from "./Nav";
 
-
-function GamesCard({level}: {level: string}) {
+function GamesCard({ level }: { level: number }) {
   const [cards, setCards] = useState<Card[]>([]);
   const [turns, setTurns] = useState(0);
-  const [choiceOne, setChoiceOne] = useState<Card | null>(null)
-  const [choiceTwo, setChoiceTwo] = useState<Card | null>(null)
+  const [choiceOne, setChoiceOne] = useState<Card | null>(null);
+  const [choiceTwo, setChoiceTwo] = useState<Card | null>(null);
   const [timer, setTimer] = useState(0);
   const [gameStarted, setGameStarted] = useState(false);
-  const [matched, setMatched] = useState(false)
+  const [matched, setMatched] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
@@ -27,80 +26,83 @@ function GamesCard({level}: {level: string}) {
       return () => clearInterval(countdown);
     } else if (timer === 0 && gameStarted) {
       alert("Waktu Habis");
-      setGameStarted(false); 
-    } 
+      setGameStarted(false);
+    }
   }, [timer, gameStarted]);
 
   const startGame = () => {
-    setGameStarted(true);
-    setMatched(false)
-    setTimer(120); // 2 minutes in seconds
     shuffleCards();
+    setGameStarted(true);
+    setMatched(false);
+    setTimer(120); // 2 minutes in seconds
   };
 
   const shuffleCards = () => {
-    const suffledCards: Card[] = [...GameResources].sort(() => Math.random() - 0.5).map((card) => ({ ...card }));
-    setCards(suffledCards);
-    setTurns(0);
+    const selectedLevel = GameResources.find(gr => gr.level == level);
+    console.log(selectedLevel, GameResources, level);
+    
+    if (selectedLevel) {
+      const shuffledCards: Card[] = [...selectedLevel.cards].sort(() => Math.random() - 0.5).map((card) => ({ ...card }));
+      setCards(shuffledCards);
+      setTurns(0);
+    }
   };
 
   // handle choice
   const handleClick = (card: Card) => {
     if (card === choiceOne || card === choiceTwo) {
-      return; // Tidak lakukan apa-apa jika kartu yang sama diklik lagi
+      return; // Do nothing if the same card is clicked again
     }
     choiceOne !== null ? setChoiceTwo(card) : setChoiceOne(card);
   };
 
-  // compare 2 selected choice
+  // compare 2 selected choices
   useEffect(() => {
     if (choiceOne && choiceTwo) {
-      if(choiceOne.name === choiceTwo.name){
-        setCards( prev => {
-          return prev.map( card => {
-            if(card.name === choiceOne.name) {
-              return {...card, matched: true}
+      if (choiceOne.name === choiceTwo.name) {
+        setCards(prev => {
+          return prev.map(card => {
+            if (card.name === choiceOne.name) {
+              return { ...card, matched: true };
             } else {
-              return card
+              return card;
             }
-          })
-        })
-        resetTurn()
+          });
+        });
+        resetTurn();
       } else {
-        setTimeout(() => resetTurn(), 1000)
+        setTimeout(() => resetTurn(), 1000);
       }
     }
-
-  }, [choiceOne, choiceTwo])  
+  }, [choiceOne, choiceTwo]);
 
   // reset choice
   const resetTurn = () => {
-    setChoiceOne(null)
-    setChoiceTwo(null)
-    setMatched(false)
-    setTurns(prevTurns => prevTurns + 1)
-  }
+    setChoiceOne(null);
+    setChoiceTwo(null);
+    setMatched(false);
+    setTurns(prevTurns => prevTurns + 1);
+  };
 
   const resetGame = () => {
-    setShowModal(false)
-    setMatched(false)
-    setGameStarted(false)
-    setCards([])
-    setTurns(0)
-  }
+    setShowModal(false);
+    setMatched(false);
+    setGameStarted(false);
+    setCards([]);
+    setTurns(0);
+  };
 
   useEffect(() => {
-    const allMatched = cards.length > 0 && cards.every((card) => card.matched === true);  
+    const allMatched = cards.length > 0 && cards.every((card) => card.matched === true);
     if (allMatched) {
       setMatched(true);
       setShowModal(true);
     }
-    
   }, [cards]);
-  
+
   return (
     <div className="text-center text-blue-800">
-      <Nav title="Card Match"/>
+      <Nav title="Card Match" />
       <p className="mt-1">level: {level}</p>
       {!gameStarted ? (
         <button className="py-2 px-5 my-5 outline rounded-full font-bold text-2xl" onClick={startGame}>
@@ -111,16 +113,15 @@ function GamesCard({level}: {level: string}) {
           {matched ? "Selesai" : timer > 0 ? `Timer: ${Math.floor(timer / 60)}:${timer % 60 < 10 ? `0${timer % 60}` : timer % 60}` : "Waktu Habis"}
         </button>
       )}
-      <div className="flex flex-wrap gap-8 items-center justify-center py-10">
+      <div className="grid grid-cols-2 gap-5 place-items-center py-10">
         {cards.map((card) => (
           <CardComponent key={card.cardId} card={card} handleClick={handleClick} choiceOne={choiceOne} choiceTwo={choiceTwo} matched={matched} />
         ))}
       </div>
-      {/* <LevelList levels={levels}/> */}
+
       <ModalComponent showModal={showModal} resetGame={resetGame} />
     </div>
   );
-    
 }
 
 export default GamesCard;
