@@ -19,13 +19,6 @@ export default async function upload() {
     const buffer = Buffer.from(await file.arrayBuffer());
     const filename = JSON.parse(JSON.stringify(title));
 
-    try {
-      await newPost(filename, buffer)
-     
-    } catch (error) {
-      console.log(error);
-      
-    }
   }
   const games = await getGames()
     

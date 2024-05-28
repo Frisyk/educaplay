@@ -1,23 +1,24 @@
 'use client'
 import Link from "next/link";
-import { materi } from "../lib/data";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
+import { Post } from "@prisma/client";
 
 interface ModalProps {
   link: string;
   onClose: () => void;
+  materi: Post[];
 }
 
 interface ListProps {
-  title: string;
+  title: string | null;
   link: number;
   visited: boolean;
   markVisited: any
 }
 
-export default function Modal({ link, onClose }: ModalProps) {
+export default function Modal({ materi, link, onClose }: ModalProps) {
   const [visitedLinks, setVisitedLinks] = useState<number[]>([]);
 
   const markVisited = (index: number) => {

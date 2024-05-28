@@ -3,12 +3,14 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Modal from './Modals';
+import { Post } from '@prisma/client';
 
 export interface SearchParamProps {
   id: string;
+  materi: Post[]
 }
 
-export default function TopNavigation({ id }: SearchParamProps) {
+export default function TopNavigation({ id, materi }: SearchParamProps) {
   const [show, setShow] = useState(false);
 
   function showModals() {
@@ -31,7 +33,7 @@ export default function TopNavigation({ id }: SearchParamProps) {
           </svg>
         </div>
       </Link>
-      {show && <Modal link={id} onClose={() => setShow(false)} />}
+      {show && <Modal materi={materi} link={id} onClose={() => setShow(false)} />}
     </nav>
   );
 }

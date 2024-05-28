@@ -39,7 +39,6 @@ function GamesCard({ level }: { level: number }) {
 
   const shuffleCards = () => {
     const selectedLevel = GameResources.find(gr => gr.level == level);
-    console.log(selectedLevel, GameResources, level);
     
     if (selectedLevel) {
       const shuffledCards: Card[] = [...selectedLevel.cards].sort(() => Math.random() - 0.5).map((card) => ({ ...card }));

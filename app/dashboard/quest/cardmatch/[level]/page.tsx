@@ -1,12 +1,13 @@
 import GamesCard from "@/components/Games/CardMatch";
+import { GameResources } from "@/lib/data";
 
-// export const generateMetadata = async ({params}: {params: MateriParams}) => {
-//   const {title, materi1} = materi[params.id]
-//   return {
-//     title: title,
-//     description: materi1
-//   }
-// }
+export const generateMetadata = async ({params}: {params: MateriParams}) => {
+  const title = GameResources.find(gr => gr.level == params.level)
+  return {
+    title: `Card Match Level: ${title?.level}`,
+    description: title?.cards
+  }
+}
 
 type MateriParams = {
   level: number;
