@@ -112,7 +112,7 @@ function GamesCard({ level }: { level: number }) {
           {matched ? "Selesai" : timer > 0 ? `Timer: ${Math.floor(timer / 60)}:${timer % 60 < 10 ? `0${timer % 60}` : timer % 60}` : "Waktu Habis"}
         </button>
       )}
-      <div className="grid grid-cols-2 gap-5 place-items-center py-10">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-20 place-items-center place-content-stretch py-10">
         {cards.map((card) => (
           <CardComponent key={card.cardId} card={card} handleClick={handleClick} choiceOne={choiceOne} choiceTwo={choiceTwo} matched={matched} />
         ))}
