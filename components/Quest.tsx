@@ -14,7 +14,7 @@ interface QuestItemProps {
 const QuestItem: React.FC<QuestItemProps> = ({ href, src, alt, title }) => {
   return (
     <Link href={href} prefetch={false}>
-      <div className="bg-blue-50 p-4 flex items-center outline text-blue-800 w-full lg:w-max rounded-lg md:p-10">
+      <div className="bg-blue-50 p-4 flex items-center outline text-blue-800 w-full md:w-[500px] rounded-lg md:p-10">
         <Image src={src} width={400} alt={alt} className="w-1/2 lg:w-20" />
         <h2 className="text-2xl font-bold my-4">{title}</h2>
       </div>
