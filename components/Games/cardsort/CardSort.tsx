@@ -14,7 +14,7 @@ export default function CardSort() {
     return rec
   }
 
-  const levels = [1, 2, 3];
+  const levels = ["1", "2", "3"];
 
     return (
         <>

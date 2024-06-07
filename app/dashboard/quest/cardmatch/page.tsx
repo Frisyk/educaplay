@@ -17,12 +17,12 @@ export default function CardSortPage() {
     return rec
   }
 
-  const levels = [1, 2, 3];
+  const levels = ["Gerakan Shalat", "Bacaan Shalat", "Waktu Shalat"];
 
     return (
       <main className="level-list font-bold text-2xl text-center text-blue-800">
       <Nav title="Card Match"/>
-      <h1 className="my-10">Pilih Tingkat Kesulitan mu🔥</h1>
+      <h1 className="my-10">AYO UJI PEMAHAMAN MU🔥</h1>
       <LevelList levels={levels}/>
       </main>
     )

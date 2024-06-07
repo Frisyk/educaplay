@@ -7,7 +7,7 @@ import CardComponent from "./Card";
 import ModalComponent from "./Modal";
 import { Nav } from "./Nav";
 
-function GamesCard({ level }: { level: number }) {
+function GamesCard({ level }: { level: string | undefined }) {
   const [cards, setCards] = useState<Card[]>([]);
   const [turns, setTurns] = useState(0);
   const [choiceOne, setChoiceOne] = useState<Card | null>(null);
@@ -102,7 +102,7 @@ function GamesCard({ level }: { level: number }) {
   return (
     <div className="text-center text-blue-800">
       <Nav title="Card Match" />
-      <p className="mt-1">level: {level}</p>
+      <p className="mt-1">Materi: {level}</p>
       {!gameStarted ? (
         <button className="py-2 px-5 my-5 outline rounded-full font-bold text-2xl" onClick={startGame}>
           Ayo Mulai
@@ -112,12 +112,12 @@ function GamesCard({ level }: { level: number }) {
           {matched ? "Selesai" : timer > 0 ? `Timer: ${Math.floor(timer / 60)}:${timer % 60 < 10 ? `0${timer % 60}` : timer % 60}` : "Waktu Habis"}
         </button>
       )}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-20 place-items-center place-content-stretch py-10">
+      <div className="flex items-center justify-center gap-5 flex-wrap py-10">
         {cards.map((card) => (
           <CardComponent key={card.cardId} card={card} handleClick={handleClick} choiceOne={choiceOne} choiceTwo={choiceTwo} matched={matched} />
         ))}
       </div>
-
+      {/* grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 lg:gap-20 place-items-center place-content-stretch */}
       <ModalComponent showModal={showModal} resetGame={resetGame} />
     </div>
   );

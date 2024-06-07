@@ -8,5 +8,5 @@ export interface Card {
   }
   
 export interface ListProps {
-    levels: number[]; // Array of level names (e.g., ["Common", "Rare", "Epic"])
+    levels: string[]; // Array of level names (e.g., ["Common", "Rare", "Epic"])
   }

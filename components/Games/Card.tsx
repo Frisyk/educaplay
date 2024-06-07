@@ -11,11 +11,10 @@ interface CardComponentProps {
   }
   
   const CardComponent: React.FC<CardComponentProps> = ({ card, handleClick, choiceOne, choiceTwo, matched }) => (
-    <div className={card === choiceOne || card === choiceTwo || card.matched ? "card flipped lg:w-56 w-40" : "card lg:w-56 w-40"} onClick={() => handleClick(card)}>
-      <div>
-        <Image className="lg:w-52 front" src={card.src} alt="card front" />
-        <Image className="lg:w-52 back" src={cover} alt="card back" />
-      </div>
+    <div className={card === choiceOne || card === choiceTwo || card.matched ? "card flipped w-full lg:w-52 " : "card w-full lg:w-52"} onClick={() => handleClick(card)}>
+
+        <Image className="lg:min-w-52 w-20 max-h-40 object-contain front" src={card.src} alt="card front" />
+        <div className="w-full lg:min-w-52 h-40 bg-blue-500 back flex items-center justify-center text-xl text-blue-200 rounded-2xl">EducaPlay</div>
     </div>
   );
   

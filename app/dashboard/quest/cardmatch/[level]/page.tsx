@@ -10,15 +10,15 @@ export const generateMetadata = async ({params}: {params: MateriParams}) => {
 }
 
 type MateriParams = {
-  level: number;
+  level: string;
 };
 
 async function MateriPage({ params }: { params: MateriParams }) {
-  const level = params.level;
+  const level = GameResources.find(gr => gr.level == params.level.replace(/%20/g, " "))  
 
   return (
     <main>
-      <GamesCard level={level}/>
+      <GamesCard level={level?.level}/>
     </main>
   );
 }
