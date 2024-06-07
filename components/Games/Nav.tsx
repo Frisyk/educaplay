@@ -8,7 +8,7 @@ export function Nav({title} : {title: string}) {
 
     return(
         <nav className="flex items-center justify-between">
-            <div onClick={() => route.back()} ><ChevronLeftIcon className="w-8" /></div>
+            <div onClick={() => route.back()} ><ChevronLeftIcon className="w-8 cursor-pointer" /></div>
             <h1 className="text-2xl font-bold bg-blue-200 p-1 px-3 rounded-xl">{title}</h1>
             <div><InformationCircleIcon className="w-8" /></div>
         </nav>
