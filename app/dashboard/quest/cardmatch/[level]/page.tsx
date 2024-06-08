@@ -18,7 +18,7 @@ async function MateriPage({ params }: { params: MateriParams }) {
 
   return (
     <main>
-      <GamesCard level={level?.level}/>
+      <GamesCard level={level?.level} back="/dashboard/quest/cardmatch"/>
     </main>
   );
 }

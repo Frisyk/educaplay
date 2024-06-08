@@ -6,8 +6,10 @@ import { Card } from "./type";
 import CardComponent from "./Card";
 import ModalComponent from "./Modal";
 import { Nav } from "./Nav";
+import { useRouter } from "next/navigation";
 
-function GamesCard({ level }: { level: string | undefined }) {
+function GamesCard({ level, back }: { level: string | undefined, back: string }) {
+  const router = useRouter();
   const [cards, setCards] = useState<Card[]>([]);
   const [turns, setTurns] = useState(0);
   const [choiceOne, setChoiceOne] = useState<Card | null>(null);
@@ -91,6 +93,14 @@ function GamesCard({ level }: { level: string | undefined }) {
     setTurns(0);
   };
 
+  const nextGame = () => {
+    const currentIndex = GameResources.findIndex(gr => gr.level === level);
+    const nextIndex = (currentIndex + 1) % GameResources.length;  // Loop back to the first level if at the end
+    const nextLevel = GameResources[nextIndex].level;
+
+    router.push(`/dashboard/quest/cardmatch/${nextLevel}`)
+  }
+
   useEffect(() => {
     const allMatched = cards.length > 0 && cards.every((card) => card.matched === true);
     if (allMatched) {
@@ -101,7 +111,7 @@ function GamesCard({ level }: { level: string | undefined }) {
 
   return (
     <div className="text-center text-blue-800">
-      <Nav title="Card Match" />
+      <Nav title="Card Match" link={back} />
       <p className="mt-1">Materi: {level}</p>
       {!gameStarted ? (
         <button className="py-2 px-5 my-5 outline rounded-full font-bold text-2xl" onClick={startGame}>
@@ -117,8 +127,7 @@ function GamesCard({ level }: { level: string | undefined }) {
           <CardComponent key={card.cardId} card={card} handleClick={handleClick} choiceOne={choiceOne} choiceTwo={choiceTwo} matched={matched} />
         ))}
       </div>
-      {/* grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 lg:gap-20 place-items-center place-content-stretch */}
-      <ModalComponent showModal={showModal} resetGame={resetGame} />
+      <ModalComponent showModal={showModal} nextGame={nextGame} />
     </div>
   );
 }

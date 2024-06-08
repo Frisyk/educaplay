@@ -18,7 +18,7 @@ export default function CardSort() {
 
     return (
         <>
-        <Nav title="Card Sort"/>
+        <Nav link="/" title="Card Sort"/>
             <ListItems levels={levels}/>
             <ListItems levels={levels}/>
         </>

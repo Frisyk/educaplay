@@ -21,7 +21,7 @@ export default function CardSortPage() {
 
     return (
       <main className="level-list font-bold text-2xl text-center text-blue-800">
-      <Nav title="Card Match"/>
+      <Nav title="Card Match" link="/dashboard/quest"/>
       <h1 className="my-10">AYO UJI PEMAHAMAN MU🔥</h1>
       <LevelList levels={levels}/>
       </main>
