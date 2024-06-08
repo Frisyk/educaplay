@@ -70,7 +70,7 @@ function ListMateri({ title, link, visited, markVisited }: ListProps) {
   });
 
   return (
-    <Link href={`/dashboard/materi/${link}`}
+    <Link prefetch={false} href={`/dashboard/materi/${link}`}
       
         onClick={handleClick}
         className={itemClasses}>
