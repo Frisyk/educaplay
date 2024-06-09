@@ -44,3 +44,13 @@ body {
 .flipped .back {
 transform: rotateY(90deg); transition-delay: 0s;
 }
+
+ol {
+  list-style-type: decimal; /* Pastikan tipe daftar adalah decimal untuk penomoran */
+}
+.arabic-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 1rem;
+}
