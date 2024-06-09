@@ -2,7 +2,7 @@ import GamesCard from "@/components/Games/CardMatch";
 import { GameResources } from "@/lib/data";
 
 export const generateMetadata = async ({params}: {params: MateriParams}) => {
-  const title = GameResources.find(gr => gr.level == params.level)
+  const title = GameResources.find(gr => gr.level == params.level.replace(/%20/g, " "))
   return {
     title: `Card Match Level: ${title?.level}`,
     description: title?.cards
@@ -14,11 +14,11 @@ type MateriParams = {
 };
 
 async function MateriPage({ params }: { params: MateriParams }) {
-  const level = GameResources.find(gr => gr.level == params.level.replace(/%20/g, " "))  
+  const game = GameResources.find(gr => gr.level == params.level.replace(/%20/g, " "))  
 
   return (
     <main>
-      <GamesCard level={level?.level} back="/dashboard/quest/cardmatch"/>
+      <GamesCard level={game?.level} back="/dashboard/quest/cardmatch"/>
     </main>
   );
 }
