@@ -23,7 +23,7 @@ export default function TopNavigation({ id, materi }: SearchParamProps) {
         <h1 className="flex gap-2 text-xl">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
-          </svg>Home
+          </svg>EducaPlay
         </h1>
       </Link>
       <Link href={`${id}?show=true`} passHref>
