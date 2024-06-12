@@ -10,7 +10,7 @@ export default function AssessmentPage() {
     },
     {
       title: "Assesment 2",
-      link: "https://google.com"
+      link: "https://docs.google.com/forms/d/e/1FAIpQLSf0gSpsXgJu-a7DmAwj1EtuUXqf3htyKBZom-bwlUWDw_JZEg/viewform?usp=sf_link "
     }
   ];
 
