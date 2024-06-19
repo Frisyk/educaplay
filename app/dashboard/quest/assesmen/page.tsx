@@ -5,12 +5,12 @@ import React from 'react';
 export default function AssessmentPage() {
   const posts = [
     {
-      title: "Assesment 1",
-      link: "https://docs.google.com/forms/d/e/1FAIpQLScQKEx6fPXz_ijSSNIiz4zDen2qdGt1V8AQj3RpDYBvs4YNJQ/viewform?usp=sf_link"
+      title: "Pre-Test",
+      link: "https://forms.gle/TPq8NnJFMAmpAoxn9"
     },
     {
-      title: "Assesment 2",
-      link: "https://docs.google.com/forms/d/e/1FAIpQLSf0gSpsXgJu-a7DmAwj1EtuUXqf3htyKBZom-bwlUWDw_JZEg/viewform?usp=sf_link "
+      title: "Post-Test",
+      link: "https://forms.gle/TPq8NnJFMAmpAoxn9"
     }
   ];
 
