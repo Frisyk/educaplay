@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   icons: {
     icon: '/icon.png',
   },
+  other: {
+    "dicoding:email": "frisnadi1@gmail.com",
+  },
 };
 export default function RootLayout({
   children,
@@ -24,9 +27,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className + ' bg-blue-50 text-blue-800'}>
-        <head>
-            <meta name="dicoding:email" content="frisnadi1@gmail.com"/>
-        </head>
         <SessionProvider>
           {children}
         </SessionProvider>      

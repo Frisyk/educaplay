@@ -1,7 +1,7 @@
 'use client'
 import { useSession, SessionProvider } from "next-auth/react";
 import { redirect } from "next/navigation";
-import { ListItems } from "@/components/Games/cardsort/ListItems";
+import { ListItems } from "@/components/Games/cardsort (drop)/ListItems";
 import { Nav } from "../Nav";
 
 

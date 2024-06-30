@@ -23,8 +23,8 @@ const QuestItem: React.FC<QuestItemProps> = ({ href, src, alt, title }) => {
 };
 export default function Quest() {
   const quests = [
-    { href: "/dashboard/quest/assesmen", src: task, alt: "assesmen picture", title: "Assesment (Ujian)" },
-    { href: "/dashboard/quest/cardmatch", src: card, alt: "card match picture", title: "Card Match" },
+    { href: "/dashboard/quest/assesmen", src: task, alt: "assesmen picture", title: "Assesmen" },
+    { href: "/dashboard/quest/cardmatch", src: card, alt: "card match picture", title: "Game Card Match" },
     // { href: "/dashboard/quest/cardsort", src: sort, alt: "card sort picture", title: "Card Sort" }
   ];
 

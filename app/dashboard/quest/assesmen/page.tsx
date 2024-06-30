@@ -5,18 +5,18 @@ import React from 'react';
 export default function AssessmentPage() {
   const posts = [
     {
-      title: "Pre-Test",
-      link: "https://forms.gle/TPq8NnJFMAmpAoxn9"
+      title: "Assesmen 1",
+      link: "https://docs.google.com/forms/d/e/1FAIpQLScQKEx6fPXz_ijSSNIiz4zDen2qdGt1V8AQj3RpDYBvs4YNJQ/viewform?usp=sf_link"
     },
-    {
-      title: "Post-Test",
-      link: "https://forms.gle/TPq8NnJFMAmpAoxn9"
-    }
+    // {
+    //   title: "Assesmen 2",
+    //   link: "https://forms.gle/TPq8NnJFMAmpAoxn9"
+    // }
   ];
 
   return (
     <div className=" h-screen w-full">
-      <Nav title="Assesment" link="/dashboard/quest"/>
+      <Nav title="Assesmen" link="/dashboard/quest"/>
       <div className="flex flex-col gap-5  items-center justify-center">
         {posts.map((post, index) => (
           <AssessmentList key={index} data={post} />
