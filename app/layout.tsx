@@ -7,11 +7,11 @@ const inter = Poppins({ subsets: ["latin"], weight: ["200", "400", "600"] });
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | EducaPlay',
-    default: 'EducaPlay',
+    template: '%s | ShalatYUK',
+    default: 'ShalatYUK',
   },
   description: 'Web App belajar PAI interaktif.',
-  metadataBase: new URL('https://educaplay.vercel.app'),
+  metadataBase: new URL('https://ShalatYUK.vercel.app'),
   icons: {
     icon: '/icon.png',
   },

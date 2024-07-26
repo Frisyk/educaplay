@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Admin Dashboard",
-  description: 'Admin Dashboard web Educaplay.',
+  description: 'Admin Dashboard web ShalatYUK.',
 };
 
 export default async function AdminPage() {

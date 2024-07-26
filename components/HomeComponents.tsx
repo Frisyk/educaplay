@@ -19,7 +19,7 @@ export default function HomeComponent() {
   return (
     <main className="w-full min-h-screen pb-20 md:pb-0 text-blue-950 bg-white flex items-center flex-col md:flex-row ">
       {/* <h1 className="font-semibold text-2xl text-wrap uppercase">
-        Educaplay
+        ShalatYUK
       </h1> */}
       <Image
         src={hero}
@@ -49,7 +49,7 @@ export default function HomeComponent() {
         </button>
       </div>
       
-      <h1 className="absolute text-white p-4 m-5 rounded-2xl text-3xl right-0 font-semibold tracking-wide">EducaPlay</h1>
+      <h1 className="absolute text-white p-4 m-5 rounded-2xl text-3xl right-0 font-semibold tracking-wide">ShalatYUK</h1>
     </main>
   );
 }

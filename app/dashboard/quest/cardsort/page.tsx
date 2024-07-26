@@ -1,4 +1,3 @@
-import CardSort from "@/components/Games/cardsort (drop)/CardSort";
 import Link from "next/link";
 
 export default function CardSortPage() {

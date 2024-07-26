@@ -54,3 +54,51 @@ ol {
   text-align: center;
   margin: 1rem;
 }
+
+.perjalanan-islam {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.scene {
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.scene h2 {
+  margin-bottom: 10px;
+}
+
+.scene p {
+  line-height: 1.5;
+}
+
+.options {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.options li {
+  margin-bottom: 10px;
+}
+
+.options button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.congratulations {
+  margin-top: 20px;
+  font-size: 18px;
+  color: green;
+}
